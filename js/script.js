@@ -19,30 +19,52 @@ var links = ["https://www.youtube.com/watch?v=zY6gpQRxc2g",
 "https://www.youtube.com/watch?v=KZwzmhewOhU",
 "https://www.youtube.com/watch?v=upH1x4TsGNQ"];
     // BELOW Use forEach Loop to display the data from each of your array's in the correct div
+function displaySongInfo () {
+songs.forEach(function(title) {
+    $('#songs').append("<p>" + title + "</p>")
+});
+
 links.forEach(function(link) {
-    $('#links').append(link);
+    $('#links').append("<a href ='" + link + "'> Listen </a>");
 });
 song_length.forEach(function(time){
-   $('#length').append(time); 
+   $('#lengths').append("<p>" + time + "</p>"); 
 });
 artists.forEach(function(name){
    $('#artists').append("<p>"+ name + "</p>"); 
 });
 images_links.forEach(function(image){
-    $('#images').append(image)
-});
+    $('#images').append("<img src ='" + image +"'>")
+});    
+    
+}
+
 function emptySongInfo(){
     $("#songs").empty();
     // Use jQuery to empty all of the remaining divs
-
-
+    $("#images").empty();
+    $("#artists").empty();
+    $("#lengths").empty();
+    $("#links").empty();
 }
 
 
 function addSongInfo(){
     // BELOW write the code to add new items to each of the arrays.
-
-
+var songTitle = $('#song').val();
+    songs.push(songTitle)
+    
+var songLink = $('#link').val();
+    links.push(songLink)
+    
+var songArtist = $('#artist').val();
+    artists.push(songArtist)
+    
+var songImage = $('#image').val();
+    images_links.push(songLink)
+    
+var songLength = $('#length').val();
+    song_length.push(songLength)
 }
 
 $("#add").click(function() {
