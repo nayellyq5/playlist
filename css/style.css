@@ -58,9 +58,18 @@ h1 {
 input {
     padding: 5px 10px;
     font-size: 14px;
+    background-color: purple;
+    color: white;
 }
 
 button {
+    background-color: green;
     font-size: 14px;
     padding: 5px 10px;
+    color: white;
+}
+
+body {
+    background-color: purple;
+    color:white;
 }
